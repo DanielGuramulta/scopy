@@ -249,6 +249,8 @@ void InfoPage::refreshInfoWidget()
 	}
 
 	int pos = 0;
+	ui->paramLayout->setRowMinimumHeight(pos, 20);
+
 	for (auto key : m_info_params.keys()) {
 		QLabel *valueLbl = new QLabel(this);
 		QLabel *keyLbl = new QLabel(this);
@@ -261,9 +263,10 @@ void InfoPage::refreshInfoWidget()
 		ui->paramLayout->addWidget(valueLbl, pos, 1, 1, 1);
 		pos++;
 	}
+	pos++;
+	ui->paramLayout->addWidget(new QLabel(""), pos, 0, 1, 1);
 
 	if (m_advanced) {
-		ui->paramLayout->setRowMinimumHeight(pos, 20);
 		pos++;
 		ui->paramLayout->addWidget(new QLabel("Advanced"), pos, 0, 1, 1);
 		pos++;
@@ -279,7 +282,12 @@ void InfoPage::refreshInfoWidget()
 			ui->paramLayout->addWidget(valueLbl, pos, 1, 1, 1);
 			pos++;
 		}
+		pos++;
+		ui->paramLayout->addWidget(new QLabel(""), pos, 0, 1, 1);
 	}
+	// creates some spacing
+
+
 }
 
 QString InfoPage::uri() const
@@ -460,6 +468,9 @@ void M2kInfoPage::updateFwVersionWidget() {
 void M2kInfoPage::getDeviceInfo()
 {
 	InfoPage::getDeviceInfo();
+	QString versionString = QString(m_info_params["Model"].split("Rev")[1][1]);
+	QString registrationLink = "https://my.analog.com/en/app/registration/hardware/ADALM2000?sn="+QString(getSerialNumber())+"&v=Rev."+versionString;
+	ui->registration_label->setText("Dont forget to <a href=\""+ registrationLink +"\">register</a> your device");
 	updateFwVersionWidget();
 	refreshTemperature();
 }
