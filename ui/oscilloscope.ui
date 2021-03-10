@@ -147,6 +147,13 @@ Signal View</string>
          </widget>
         </item>
         <item>
+         <widget class="adiscope::LinkedButton" name="btnHelp">
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </item>
+        <item>
          <spacer name="horizontalSpacer_11">
           <property name="orientation">
            <enum>Qt::Horizontal</enum>
@@ -1005,6 +1012,11 @@ QPushButton:checked { border-image: url(:/icons/setup_btn_checked.svg); }</strin
    <extends>QWidget</extends>
    <header>runsinglewidget.h</header>
    <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>adiscope::LinkedButton</class>
+   <extends>QPushButton</extends>
+   <header>linked_button.hpp</header>
   </customwidget>
  </customwidgets>
  <resources>

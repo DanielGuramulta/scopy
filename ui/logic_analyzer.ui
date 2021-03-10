@@ -157,6 +157,9 @@
          </widget>
         </item>
         <item>
+         <widget class="adiscope::LinkedButton" name="btnHelp"/>
+        </item>
+        <item>
          <spacer name="horizontalSpacer_11">
           <property name="orientation">
            <enum>Qt::Horizontal</enum>
@@ -511,8 +514,8 @@
                      <rect>
                       <x>0</x>
                       <y>0</y>
-                      <width>400</width>
-                      <height>474</height>
+                      <width>200</width>
+                      <height>329</height>
                      </rect>
                     </property>
                     <property name="sizePolicy">
@@ -1977,6 +1980,11 @@ QPushButton:checked { border-image: url(:/icons/setup_btn_checked.svg); }</strin
    <extends>QWidget</extends>
    <header>runsinglewidget.h</header>
    <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>adiscope::LinkedButton</class>
+   <extends>QPushButton</extends>
+   <header>linked_button.hpp</header>
   </customwidget>
   <customwidget>
    <class>adiscope::CustomSwitch</class>

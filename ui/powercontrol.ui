@@ -521,6 +521,22 @@ color: #9013fe;
        <number>26</number>
       </property>
       <item>
+       <widget class="adiscope::LinkedButton" name="btnHelp"/>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer_7">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
        <widget class="QLabel" name="label_12">
         <property name="text">
          <string>Tracking ratio control</string>
@@ -997,11 +1013,6 @@ QPushButton:disabled {
  </widget>
  <customwidgets>
   <customwidget>
-   <class>adiscope::CustomSwitch</class>
-   <extends>QPushButton</extends>
-   <header>customSwitch.hpp</header>
-  </customwidget>
-  <customwidget>
    <class>adiscope::DetachDragZone</class>
    <extends>QWidget</extends>
    <header>detachdragzone.h</header>
@@ -1012,6 +1023,16 @@ QPushButton:disabled {
    <extends>QWidget</extends>
    <header>instrumentnotes.h</header>
    <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>adiscope::LinkedButton</class>
+   <extends>QPushButton</extends>
+   <header>linked_button.hpp</header>
+  </customwidget>
+  <customwidget>
+   <class>adiscope::CustomSwitch</class>
+   <extends>QPushButton</extends>
+   <header>customSwitch.hpp</header>
   </customwidget>
   <customwidget>
    <class>QwtThermo</class>
@@ -1025,6 +1046,7 @@ QPushButton:disabled {
   </customwidget>
  </customwidgets>
  <resources>
+  <include location="../resources/resources.qrc"/>
   <include location="../resources/resources.qrc"/>
  </resources>
  <connections>
